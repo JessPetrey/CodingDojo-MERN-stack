@@ -6,12 +6,16 @@ module.exports.testing = (req, res) => {
 
 // get all 
 module.exports.getAll = (req, res) => {
-    res.json()
+    Joke.find()
+    .then((response) => res.json(response))
+    .catch(err => res.json(err))
 }
 
 //get one by id
 module.exports.getOne = (req, res) => {
-    res.json()
+    Joke.findOne( {_id: requestAnimationFrame.params.id} )
+    .then((response) => res.json(response))
+    .catch(err => res.json(err))
 }
 
 //get random
@@ -21,15 +25,25 @@ module.exports.getRandom = (req, res) => {
 
 // create
 module.exports.addOne = (req, res) => {
-    res.json()
+    Joke.create(req.body)
+    .then((response) => res.json(response))
+    .catch(err => res.json(err))
 }
 
 //update by id
 module.exports.updateOne = (req, res) => {
-    res.json()
+    Joke.findOneAndUpdate(
+        {_id: req.params.id},
+        req.body,
+        {new: true, runValidators: true}
+        )
+    .then((response) => res.json(response))
+    .catch(err => res.json(err))
 }
 
 //delete by id
 module.exports.deleteOne = (req, res) => {
-    res.json()
+    Joke.deleteOne({ _id: req.params.id })
+    .then((response) => res.json(response))
+    .catch(err => res.json(err))
 }
