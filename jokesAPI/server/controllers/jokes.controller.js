@@ -1,4 +1,3 @@
-const { countDocuments } = require('../models/jokes.model')
 const Joke = require('../models/jokes.model')
 
 module.exports.testing = (req, res) => {
@@ -18,7 +17,6 @@ module.exports.getOne = (req, res) => {
         .then((response) => res.json(response))
         .catch(err => res.json(err))
 }
-
 
 // create
 module.exports.addOne = (req, res) => {
