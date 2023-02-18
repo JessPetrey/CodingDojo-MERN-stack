@@ -13,7 +13,7 @@ module.exports.getAll = (req, res) => {
 
 //get one by id
 module.exports.getOne = (req, res) => {
-    Joke.findOne( {_id: requestAnimationFrame.params.id} )
+    Joke.findOne( {_id: req.params.id} )
     .then((response) => res.json(response))
     .catch(err => res.json(err))
 }
