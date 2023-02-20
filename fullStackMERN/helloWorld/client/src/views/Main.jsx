@@ -19,7 +19,7 @@ const Main = (props) => {
         <div>
             <PersonForm />
             <hr />
-            {loaded && <PersonList people={people}/>}
+            {people ?  <PersonList people={people}/> : <h3>add some peeps</h3>}
         </div>
     )
 }
