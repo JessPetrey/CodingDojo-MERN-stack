@@ -12,7 +12,11 @@ export default () => {
             firstName,
             lastName
         })
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+            setFirstName('')
+            setLastName('')
+        })
         .catch(err => console.log(err))
     }
 
