@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+.formContainer {
+  align-content: center;
+  margin: 5%;
+}
+/* .form {
+  margin: 2%;
+} */
+.formHeading {
+  margin: 2%;
+}
+.formRow {
+  padding: 1%;
+  margin: 2%;
+  border-radius: 5px;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.label {
+  margin: 1%;
+}
+#input {
+  width: 80%;
+  box-sizing: border-box;
+  border: none;
+  padding: 2%;
+  border-radius: 5px;
+}
+.formSubmit {
+  padding: 1% 5%;
+  background-color: #6666;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: medium;
+  box-shadow: 2px 2px black;
+}
