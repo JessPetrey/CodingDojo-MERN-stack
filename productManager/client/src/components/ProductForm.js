@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
+import '../App.css';
 
 export default () => {
     const [title, setTitle] = useState('')
@@ -13,25 +14,28 @@ export default () => {
             price,
             description
         })
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     }
 
-    return(
-        <form onSubmit={handleSubmit}>
-            <p>
-                <label>Title</label> <br/>
-                <input type='text' value={title} onChange={ (e)=>setTitle(e.target.value) }/>
-            </p>
-            <p>
-                <label>Price</label> <br/>
-                <input  type='number' value={price} onChange={ (e)=>setPrice(e.target.value) }/>
-            </p>
-            <p>
-                <label>Description</label> <br/>
-                <input  type='text' value={description} onChange={ (e)=>setDescription(e.target.value) }/>
-            </p>
-            <input type='submit' value='Create'/>
-        </form>
+    return (
+        <div className='formContainer'>
+            <h1 className='formHeading'>Product Manager</h1>
+            <form className='form' onSubmit={handleSubmit}>
+                <p className='formRow'>
+                    <label className='label'>Title</label>
+                    <input id='input' type='text' value={title} onChange={(e) => setTitle(e.target.value)} />
+                </p>
+                <p className='formRow'>
+                    <label className='label'>Price</label>
+                    <input id='input' type='number' value={price} onChange={(e) => setPrice(e.target.value)} />
+                </p>
+                <p className='formRow'>
+                    <label className='label'>Description</label>
+                    <input id='input' type='text' value={description} onChange={(e) => setDescription(e.target.value)} />
+                </p>
+                <input className='formSubmit' type='submit' value='Create' />
+            </form>
+        </div>
     )
 }
