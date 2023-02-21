@@ -3,6 +3,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Main from './views/Main'
 import Detail from './views/Detail';
+import Edit from './views/Edit';
 
 
 function App() {
