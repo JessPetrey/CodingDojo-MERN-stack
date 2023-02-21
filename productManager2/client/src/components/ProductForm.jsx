@@ -4,7 +4,7 @@ import '../App.css';
 
 export default () => {
     const [title, setTitle] = useState('')
-    const [price, setPrice] = useState()
+    const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
 
     const handleSubmit = e => {
@@ -14,7 +14,12 @@ export default () => {
             price,
             description
         })
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                setTitle('')
+                setPrice('')
+                setDescription('')
+            })
             .catch(err => console.log(err))
     }
 
