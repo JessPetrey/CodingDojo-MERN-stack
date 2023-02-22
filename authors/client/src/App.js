@@ -1,16 +1,17 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import Main from './views/Main'
-import Detail from './views/Detail';
 import Edit from './views/Edit';
+import Create from './views/Create';
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route element={<Main />} path='/authors' />
-        <Route element={<Detail />} path='/authors/:id' />
-        <Route element={<Edit />} path='/authors/:id/edit' />
+        <Route element={<Main />} path='/' />
+        <Route element={<Create />} path='/new' />
+        <Route element={<Edit />} path='/edit/:id' />
       </Routes>
     </div>
   );
