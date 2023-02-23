@@ -53,7 +53,7 @@ const Edit = () => {
                         <p className='text-danger'>{errors}</p>
                         : <></>
                 }
-                <button onClick={handleCancel} className='btn btn-danger'>Cancel</button>
+                <button type='button' onClick={handleCancel} className='btn btn-danger'>Cancel</button>
                 <input className='btn btn-success' type='submit' value='Submit' />
             </form>
         </div>

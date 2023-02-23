@@ -50,7 +50,7 @@ const Main = () => {
                                         <Link to={`/edit/${oneAuthor._id}`} className='btn btn-success'>Edit</Link>
                                     </td>
                                     <td>
-                                        <button onClick={(e) => handleDelete(oneAuthor._id)} className='btn btn-danger' >Delete</button>
+                                        <button type='button' onClick={(e) => handleDelete(oneAuthor._id)} className='btn btn-danger' >Delete</button>
                                     </td>
                                 </tr>
                             )
