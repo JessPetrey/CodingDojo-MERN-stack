@@ -13,13 +13,12 @@ const Create = () => {
         e.preventDefault()
         axios.post('http://localhost:8000/api/authors/new', { name })
             .then(res => {
-                setName('')
                 nav('/')
             })
             .catch(err => {
                 const errResponse = err.response.data.errors
                 const errorArray = []
-                for (const key of Object.keys(errResponse)) {
+                for (const key in errResponse) {
                     errorArray.push(errResponse[key].message)
                 }
                 setErrors(errorArray)
@@ -34,12 +33,18 @@ const Create = () => {
         <div className='container m-5'>
             <h1 className=''>Favorite Author</h1>
             <Link to={'/'}>Home</Link>
-            <p>Add a new author:</p>
+            <hr />
+            <h3>Add a new author:</h3>
             <form className='form' onSubmit={handleSubmit}>
                 <p className='formRow'>
                     <label className='label'>Name</label>
                     <input id='input' type='text' value={name} onChange={(e) => setName(e.target.value)} />
                 </p>
+                {
+                    errors ?
+                        <p className='text-danger'>{errors}</p>
+                        : <></>
+                }
                 <button onClick={handleCancel} className='btn btn-danger'>Cancel</button>
                 <input className='btn btn-success' type='submit' value='Submit' />
             </form>
