@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link, useNavigate, useParams } from "react-router-dom";
-import '../App.css';
 
 
 const Edit = () => {
@@ -17,7 +16,7 @@ const Edit = () => {
                 setName(thisAuthor.name)
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [id])
 
     const handleSubmit = e => {
         e.preventDefault()

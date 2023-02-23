@@ -1,12 +1,10 @@
-import '../App.css';
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Main = () => {
     const [authors, setAuthors] = useState([])
-    const nav = useNavigate()
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/authors`)
@@ -43,7 +41,7 @@ const Main = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {
+                    {authors ?
                         authors.map((oneAuthor, i) => {
                             return (
                                 <tr key={i}>
@@ -57,6 +55,9 @@ const Main = () => {
                                 </tr>
                             )
                         })
+                        : <tr>
+                            <td>There's nothing here. Please add an author!</td>
+                        </tr>
                     }
                 </tbody>
             </table>
