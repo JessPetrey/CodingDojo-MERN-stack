@@ -40,9 +40,9 @@ const Create = () => {
                     <input id='input' type='text' value={name} onChange={(e) => setName(e.target.value)} />
                 </p>
                 {
-                    errors ?
-                        <p className='text-danger'>{errors}</p>
-                        : <></>
+                    errors.map((eachError, i) => 
+                        <p key={i} className='text-danger'>{eachError}</p>
+                    )
                 }
                 <button type='button' onClick={handleCancel} className='btn btn-danger'>Cancel</button>
                 <input className='btn btn-success' type='submit' value='Submit' />

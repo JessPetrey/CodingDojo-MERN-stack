@@ -41,7 +41,7 @@ const Main = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {authors ?
+                    {authors.length !== 0 ?
                         authors.map((oneAuthor, i) => {
                             return (
                                 <tr key={i}>
@@ -50,13 +50,14 @@ const Main = () => {
                                         <Link to={`/edit/${oneAuthor._id}`} className='btn btn-success'>Edit</Link>
                                     </td>
                                     <td>
-                                        <button type='button' onClick={(e) => handleDelete(oneAuthor._id)} className='btn btn-danger' >Delete</button>
+                                        <button type='button' onClick={(e) => handleDelete(oneAuthor._id)}
+                                            className='btn btn-danger' >Delete</button>
                                     </td>
                                 </tr>
                             )
                         })
                         : <tr>
-                            <td>There's nothing here. Please add an author!</td>
+                            <td colSpan={3}>There's nothing here. Please add an author!</td>
                         </tr>
                     }
                 </tbody>
